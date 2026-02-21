@@ -43,14 +43,6 @@
   }
   .team-name.left { color: #42a5f5; }
   .team-name.right { color: #ef5350; }
-  .player {
-    margin-bottom: 1.2rem;
-  }
-  .player-name {
-    font-size: 1.8rem;
-    font-weight: 500;
-    margin-bottom: 0.3rem;
-  }
   .score {
     font-size: 8rem;
     font-weight: 800;
@@ -111,44 +103,22 @@
 
 <div class="board">
   <div class="team left">
-    <div class="team-name left">Team 1</div>
-    <div class="player">
-      <div class="player-name">Poon</div>
-      <div class="score" id="poon">0</div>
-      <div class="btns">
-        <button class="btn minus" onclick="change('poon',-1)">&minus;</button>
-        <button class="btn plus" onclick="change('poon',1)">&plus;</button>
-      </div>
-    </div>
-    <div class="player">
-      <div class="player-name">Sanghvi</div>
-      <div class="score" id="sanghvi">0</div>
-      <div class="btns">
-        <button class="btn minus" onclick="change('sanghvi',-1)">&minus;</button>
-        <button class="btn plus" onclick="change('sanghvi',1)">&plus;</button>
-      </div>
+    <div class="team-name left">Poon &amp; Sanghvi</div>
+    <div class="score" id="team1">0</div>
+    <div class="btns">
+      <button class="btn minus" onclick="change('team1',-1)">&minus;</button>
+      <button class="btn plus" onclick="change('team1',1)">&plus;</button>
     </div>
   </div>
 
   <div class="divider"></div>
 
   <div class="team right">
-    <div class="team-name right">Team 2</div>
-    <div class="player">
-      <div class="player-name">Arjun</div>
-      <div class="score" id="arjun">0</div>
-      <div class="btns">
-        <button class="btn minus" onclick="change('arjun',-1)">&minus;</button>
-        <button class="btn plus" onclick="change('arjun',1)">&plus;</button>
-      </div>
-    </div>
-    <div class="player">
-      <div class="player-name">Baskaran</div>
-      <div class="score" id="baskaran">0</div>
-      <div class="btns">
-        <button class="btn minus" onclick="change('baskaran',-1)">&minus;</button>
-        <button class="btn plus" onclick="change('baskaran',1)">&plus;</button>
-      </div>
+    <div class="team-name right">Arjun &amp; Baskaran</div>
+    <div class="score" id="team2">0</div>
+    <div class="btns">
+      <button class="btn minus" onclick="change('team2',-1)">&minus;</button>
+      <button class="btn plus" onclick="change('team2',1)">&plus;</button>
     </div>
   </div>
 </div>
@@ -156,7 +126,7 @@
 <button class="reset" onclick="resetAll()">Reset</button>
 
 <script>
-  const scores = { poon: 0, sanghvi: 0, arjun: 0, baskaran: 0 };
+  const scores = { team1: 0, team2: 0 };
 
   function change(player, delta) {
     scores[player] = Math.max(0, scores[player] + delta);
